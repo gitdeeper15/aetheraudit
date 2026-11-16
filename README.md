@@ -255,18 +255,19 @@ Related Aether Projects
 
 ---
 
-Figures
+## Figures
 
-# Figure Description
-1 docs/figures/Fig1_Nine_Dimensions.png The nine dimensions of the Aether family, with AetherAudit as candidate #10
-2 docs/figures/Fig2_Audit_Lifecycle.png The AetherAudit lifecycle (Action → Capture → Integrity → Reconstruction → Attribution → Verification)
-3 docs/figures/Fig3_Audit_Functions.png The five functions of AetherAudit (Fn1–Fn5)
-4 docs/figures/Fig4_Boundaries.png AetherAudit and its boundaries with the seven foundational dimensions
-5 docs/figures/Fig5_Falsification_Procedure.png The falsification procedure (A-F1 to A-F4)
-6 docs/figures/Fig6_Phase_Status.png Phase status (paused at Phase 4)
-7 docs/figures/Fig7_Decision_Outcomes.png The five Phase 4 outcomes (A / R / E / F / D)
-8 docs/figures/Fig8_Overlap_Matrix.png Coverage matrix: five functions × existing dimensions
-9 docs/figures/Fig9_Evaluation_Design.png Evaluation design: scenarios × metrics × failure conditions
+| # | Figure | Description |
+|---|--------|-------------|
+| 1 | ![Fig1](docs/figures/Fig1_Nine_Dimensions.png) | The nine dimensions of the Aether family, with AetherAudit as candidate #10 |
+| 2 | ![Fig2](docs/figures/Fig2_Audit_Lifecycle.png) | The AetherAudit lifecycle (Action → Capture → Integrity → Reconstruction → Attribution → Verification) |
+| 3 | ![Fig3](docs/figures/Fig3_Audit_Functions.png) | The five functions of AetherAudit (Fn1–Fn5) |
+| 4 | ![Fig4](docs/figures/Fig4_Boundaries.png) | AetherAudit and its boundaries with the seven foundational dimensions |
+| 5 | ![Fig5](docs/figures/Fig5_Falsification_Procedure.png) | The falsification procedure (A-F1 to A-F4) |
+| 6 | ![Fig6](docs/figures/Fig6_Phase_Status.png) | Phase status (paused at Phase 4) |
+| 7 | ![Fig7](docs/figures/Fig7_Decision_Outcomes.png) | The five Phase 4 outcomes (A / R / E / F / D) |
+| 8 | ![Fig8](docs/figures/Fig8_Overlap_Matrix.png) | Coverage matrix: five functions × existing dimensions |
+| 9 | ![Fig9](docs/figures/Fig9_Evaluation_Design.png) | Evaluation design: scenarios × metrics × failure conditions |
 
 Figures 1–9 are described in the paper.
 
