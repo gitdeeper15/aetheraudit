@@ -174,7 +174,10 @@ AetherAudit/
 │   └── INDEPENDENCE_DECISION.md
 │
 ├── REVIEW/
-│   └── INTERNAL_REVIEW.md  (internal, not independent)
+│   ├── INTERNAL_REVIEW.md
+│   ├── INDEPENDENT_REVIEW.md
+│   ├── INDEPENDENT_REVIEW_PROTOCOL.md
+│   └── README.md
 │
 ├── REFERENCES/
 │   └── (to be populated with references from the paper)
@@ -218,12 +221,14 @@ Phase Status
 
 Phase Description Status
 0 — Architectural Hypothesis The hypothesis is stated ✅ Complete (ARCHITECTURAL_HYPOTHESIS.md)
-1 — Responsibility Mapping Boundaries with existing dimensions ⏳ Not started (research/RESPONSIBILITY_BOUNDARIES.md)
+1 — Responsibility Mapping Boundaries with existing dimensions ✅ Complete (research/RESPONSIBILITY_BOUNDARIES.md)
 2 — Hypothesis Review Independent review of hypothesis ⏳ Not started (REVIEW/INDEPENDENT_REVIEW.md)
-3 — Falsification Design Design of A-F1 to A-F4 tests ⏳ Not started (FALSIFICATION/FALSIFICATION_PLAN.md)
+3 — Falsification Design Design of A-F1 to A-F4 tests ✅ Complete (FALSIFICATION/FALSIFICATION_PLAN.md)
 4 — Independence Decision (E) undetermined (interim) ⚠️ Interim (DECISIONS/INDEPENDENCE_DECISION.md)
 5 — Architectural Specification Requires positive Phase 4 ❌ Not permitted
 6 — Reference Implementation Requires Phase 5 ❌ Not permitted
+
+Note. The internal review (REVIEW/INTERNAL_REVIEW.md) is complete. The independent review (REVIEW/INDEPENDENT_REVIEW.md) has not started. The independent review protocol (REVIEW/INDEPENDENT_REVIEW_PROTOCOL.md) is ready to use.
 
 ---
 
@@ -255,19 +260,18 @@ Related Aether Projects
 
 ---
 
-## Figures
+Figures
 
-| # | Figure | Description |
-|---|--------|-------------|
-| 1 | ![Fig1](docs/figures/Fig1_Nine_Dimensions.png) | The nine dimensions of the Aether family, with AetherAudit as candidate #10 |
-| 2 | ![Fig2](docs/figures/Fig2_Audit_Lifecycle.png) | The AetherAudit lifecycle (Action → Capture → Integrity → Reconstruction → Attribution → Verification) |
-| 3 | ![Fig3](docs/figures/Fig3_Audit_Functions.png) | The five functions of AetherAudit (Fn1–Fn5) |
-| 4 | ![Fig4](docs/figures/Fig4_Boundaries.png) | AetherAudit and its boundaries with the seven foundational dimensions |
-| 5 | ![Fig5](docs/figures/Fig5_Falsification_Procedure.png) | The falsification procedure (A-F1 to A-F4) |
-| 6 | ![Fig6](docs/figures/Fig6_Phase_Status.png) | Phase status (paused at Phase 4) |
-| 7 | ![Fig7](docs/figures/Fig7_Decision_Outcomes.png) | The five Phase 4 outcomes (A / R / E / F / D) |
-| 8 | ![Fig8](docs/figures/Fig8_Overlap_Matrix.png) | Coverage matrix: five functions × existing dimensions |
-| 9 | ![Fig9](docs/figures/Fig9_Evaluation_Design.png) | Evaluation design: scenarios × metrics × failure conditions |
+# Figure Description
+1 docs/figures/Fig1_Nine_Dimensions.png The ten dimensions of the Aether family, with AetherAudit as candidate #10
+2 docs/figures/Fig2_Audit_Lifecycle.png The AetherAudit lifecycle (Action → Capture → Integrity → Reconstruction → Attribution → Verification)
+3 docs/figures/Fig3_Audit_Functions.png The five functions of AetherAudit (Fn1–Fn5)
+4 docs/figures/Fig4_Boundaries.png AetherAudit and its boundaries with the seven foundational dimensions
+5 docs/figures/Fig5_Falsification_Procedure.png The falsification procedure (A-F1 to A-F4)
+6 docs/figures/Fig6_Phase_Status.png Phase status (paused at Phase 4)
+7 docs/figures/Fig7_Decision_Outcomes.png The five Phase 4 outcomes (A / R / E / F / D)
+8 docs/figures/Fig8_Overlap_Matrix.png Coverage matrix: five functions × existing dimensions
+9 docs/figures/Fig9_Evaluation_Design.png Evaluation design: scenarios × metrics × failure conditions
 
 Figures 1–9 are described in the paper.
 
@@ -283,7 +287,7 @@ Propositions P1 (near-trivial) and P2 stated as proof sketches; not machine-chec
 Failure conditions A-F1, A-F2, A-F3 not falsified by argument; A-F4 untested
 Implementation None
 Experiments None executed; Section 9 of the paper is a proposal
-Independent review Not started (Phase 2)
+Independent review Not started (Phase 2) — protocol ready (REVIEW/INDEPENDENT_REVIEW_PROTOCOL.md)
 Claims not made Independence of the dimension; completeness of the five functions; sufficiency of the boundaries; any observed benefit; any causal effect
 
 ---
