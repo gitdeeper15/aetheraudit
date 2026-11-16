@@ -1,0 +1,133 @@
+═══════════════════════════════════════════════════════════════════════════
+  AetherAudit v1.0.0 — Project Summary
+═══════════════════════════════════════════════════════════════════════════
+
+  Verifiable Evidence and Accountability Infrastructure for
+  Autonomous Agent Systems
+
+  Version        : 1.0.0 (Architectural Hypothesis)
+  Date           : 2026-11-16
+  Record ID      : AETHERAUDIT-01
+  Position       : Tenth project of the Aether family (candidate)
+  Author         : Samir Baladi (gitdeeper@gmail.com)
+  ORCID          : 0009-0003-8903-0029
+  License        : CC-BY-4.0 (this document) + MIT (code, future)
+
+───────────────────────────────────────────────────────────────────────────
+  STATUS
+───────────────────────────────────────────────────────────────────────────
+
+  Architectural Hypothesis. Not a committed project.
+  Paused at Phase 4 (Independence Decision).
+  Decision: (E) undetermined.
+
+  No implementation, specification, test, or experiment is reported.
+
+───────────────────────────────────────────────────────────────────────────
+  CENTRAL QUESTION
+───────────────────────────────────────────────────────────────────────────
+
+  How can operational evidence be produced, kept intact, and used to
+  reconstruct what actually happened and attribute responsibility — in
+  decentralized autonomous agent systems — independently of runtime
+  monitoring and policy enforcement?
+
+───────────────────────────────────────────────────────────────────────────
+  FIVE FUNCTIONS (INITIAL SCOPE)
+───────────────────────────────────────────────────────────────────────────
+
+  Fn1 — Evidence Capture       How is evidence about an action, in its
+                               context, captured so that it can be
+                               examined later?
+  Fn2 — Evidence Integrity     How is evidence integrity ensured, and how
+                               is tampering or deletion detected?
+  Fn3 — Execution              How is the execution trace — actions,
+       Reconstruction          transformations, and delegations — rebuilt,
+                               including when records are incomplete?
+  Fn4 — Responsibility         How is responsibility attributed to an
+       Attribution             agent, principal, or delegation chain in
+                               a defensible way?
+  Fn5 — Audit Verification     How can an independent party verify
+                               evidence and issue an audit verdict without
+                               assuming trust in the auditor?
+
+───────────────────────────────────────────────────────────────────────────
+  ARCHITECTURAL HYPOTHESIS
+───────────────────────────────────────────────────────────────────────────
+
+  A potentially independent architectural gap may exist between runtime
+  monitoring, policy enforcement, and identity: the operational management
+  of audit evidence — its capture, integrity, reconstruction, attribution,
+  and independent verification — across decentralized autonomous agents.
+
+  This hypothesis is falsifiable.
+
+───────────────────────────────────────────────────────────────────────────
+  FALSIFICATION CONDITIONS (A-F1 TO A-F4)
+───────────────────────────────────────────────────────────────────────────
+
+  A-F1  Non-redundancy            Not falsified (with reservation)
+  A-F2  Distinction from          Not falsified (with reservation) -- MOST FRAGILE
+        Runtime + Git
+  A-F3  Decentralizability        Not falsified (with reservation)
+  A-F4  Observable benefit        Untested
+
+───────────────────────────────────────────────────────────────────────────
+  INDEPENDENCE DECISION
+───────────────────────────────────────────────────────────────────────────
+
+  Classification : (E) undetermined
+
+  The argument is insufficient to accept AetherAudit as an independent
+  architectural dimension, and insufficient to reject it. A test is needed.
+
+  The project is paused at Phase 4. Phase 5 (Specification) is not started.
+
+───────────────────────────────────────────────────────────────────────────
+  WHAT THIS PROJECT DOES NOT CLAIM
+───────────────────────────────────────────────────────────────────────────
+
+  - That AetherAudit is an independent architectural dimension.
+  - That the five functions are complete.
+  - That the boundaries with AetherRuntime, AetherPolicy, AetherIdentity,
+    and the other dimensions are sufficient.
+  - That the gap is genuine.
+  - That implementation should begin.
+
+───────────────────────────────────────────────────────────────────────────
+  PHASE STATUS
+───────────────────────────────────────────────────────────────────────────
+
+  0  Architectural Hypothesis       Complete   (ARCHITECTURAL_HYPOTHESIS.md)
+  1  Responsibility Mapping         Complete   (research/RESPONSIBILITY_BOUNDARIES.md)
+  2  Hypothesis Review              Internal   (REVIEW/INTERNAL_REVIEW.md)
+  3  Falsification Conditions       Complete   (FALSIFICATION/FALSIFICATION_PLAN.md)
+  4  Independence Decision          Interim    (DECISIONS/INDEPENDENCE_DECISION.md) -- undetermined
+  5  Specification                  Not started
+  6  Implementation                 Not started
+  7  Evaluation                     Not started
+
+───────────────────────────────────────────────────────────────────────────
+  RELATION TO AETHERIDENTITY AND AETHERPOLICY
+───────────────────────────────────────────────────────────────────────────
+
+  AetherAudit is the TENTH project. It does NOT replace AetherIdentity
+  (the eighth project) or AetherPolicy (the ninth project). Both remain
+  candidates with unresolved independence.
+
+───────────────────────────────────────────────────────────────────────────
+  LINKS (TO BE ASSIGNED)
+───────────────────────────────────────────────────────────────────────────
+
+  GitHub    : https://github.com/gitdeeper15/aetheraudit
+  GitLab    : https://gitlab.com/gitdeeper15/aetheraudit
+  Codeberg  : https://codeberg.org/gitdeeper15/aetheraudit
+  Bitbucket : https://bitbucket.org/gitdeeper15/aetheraudit
+  Website   : https://aetheraudit.netlify.app
+  ORCID     : https://orcid.org/0009-0003-8903-0029
+  Zenodo    : https://doi.org/10.5281/zenodo.24274628
+  Figshare  : https://doi.org/10.6084/m9.figshare.35023519
+
+───────────────────────────────────────────────────────────────────────────
+  "AetherAudit is a candidate, not a result."
+═══════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,66 @@
+{
+  "name": "AetherAudit",
+  "version": "1.0.0",
+  "description": "Verifiable Evidence and Accountability Infrastructure for Autonomous Agent Systems",
+  "status": "architectural_investigation",
+  "phase": 4,
+  "decision": "E_undetermined",
+  "author": {
+    "name": "Samir Baladi",
+    "email": "gitdeeper@gmail.com",
+    "orcid": "0009-0003-8903-0029",
+    "affiliation": "Ronin Institute / Rite of Renaissance"
+  },
+  "license": {
+    "documents": "CC-BY-4.0",
+    "code": "MIT (future, none in this release)"
+  },
+  "doi": {
+    "zenodo": "10.5281/zenodo.24274628",
+    "figshare": "10.6084/m9.figshare.35023519"
+  },
+  "urls": {
+    "github": "https://github.com/gitdeeper15/aetheraudit",
+    "gitlab": "https://gitlab.com/gitdeeper15/aetheraudit",
+    "codeberg": "https://codeberg.org/gitdeeper15/aetheraudit",
+    "bitbucket": "https://bitbucket.org/gitdeeper15/aetheraudit",
+    "website": "https://aetheraudit.netlify.app"
+  },
+  "position": {
+    "family": "Aether",
+    "index": 10,
+    "role": "candidate"
+  },
+  "functions": [
+    "Fn1",
+    "Fn2",
+    "Fn3",
+    "Fn4",
+    "Fn5"
+  ],
+  "failure_conditions": [
+    "A-F1",
+    "A-F2",
+    "A-F3",
+    "A-F4"
+  ],
+  "propositions": [
+    "P1",
+    "P2"
+  ],
+  "phases": {
+    "0": "complete",
+    "1": "complete",
+    "2": "not_started",
+    "3": "complete",
+    "4": "interim",
+    "5": "not_permitted",
+    "6": "not_permitted"
+  },
+  "artifacts": {
+    "implementation": false,
+    "tests": false,
+    "experiments": false,
+    "specification": false
+  }
+}

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Samir Baladi" />
+  <title>AetherAudit v1.0.0</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">AetherAudit v1.0.0</h1>
+<p class="subtitle">A Falsification-First Investigation of Audit,
+Evidence, and Responsibility in Decentralized Multi-Agent Systems</p>
+<p class="author">Samir Baladi</p>
+<p class="date">November 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#aetheraudit-verifiable-evidence-and-accountability-infrastructure-for-autonomous-agent-systems"
+id="toc-aetheraudit-verifiable-evidence-and-accountability-infrastructure-for-autonomous-agent-systems">AetherAudit:
+Verifiable Evidence and Accountability Infrastructure for Autonomous
+Agent Systems</a>
+<ul>
+<li><a href="#abstract" id="toc-abstract">Abstract</a></li>
+<li><a href="#introduction" id="toc-introduction">1. Introduction</a>
+<ul>
+<li><a href="#the-aether-family-and-the-tenth-candidate"
+id="toc-the-aether-family-and-the-tenth-candidate">1.1 The Aether family
+and the tenth candidate</a></li>
+<li><a href="#why-audit-is-not-monitoring-not-policy-not-identity"
+id="toc-why-audit-is-not-monitoring-not-policy-not-identity">1.2 Why
+audit is not monitoring, not policy, not identity</a></li>
+<li><a href="#contribution-and-non-contribution"
+id="toc-contribution-and-non-contribution">1.3 Contribution and
+non-contribution</a></li>
+</ul></li>
+<li><a href="#related-work" id="toc-related-work">2. Related Work</a>
+<ul>
+<li><a href="#auditable-agents" id="toc-auditable-agents">2.1 Auditable
+agents</a></li>
+<li><a href="#ietf-a2a-drafts" id="toc-ietf-a2a-drafts">2.2 IETF A2A
+drafts</a></li>
+<li><a href="#provenance-and-tamper-evident-logs"
+id="toc-provenance-and-tamper-evident-logs">2.3 Provenance and
+tamper-evident logs</a></li>
+<li><a href="#accountability-in-multi-agent-systems"
+id="toc-accountability-in-multi-agent-systems">2.4 Accountability in
+multi-agent systems</a></li>
+<li><a href="#the-gap" id="toc-the-gap">2.5 The gap</a></li>
+</ul></li>
+<li><a href="#the-aether-family-context"
+id="toc-the-aether-family-context">3. The Aether Family Context</a>
+<ul>
+<li><a href="#seven-foundational-dimensions"
+id="toc-seven-foundational-dimensions">3.1 Seven foundational
+dimensions</a></li>
+<li><a href="#candidates-8-and-9" id="toc-candidates-8-and-9">3.2
+Candidates 8 and 9</a></li>
+<li><a href="#position-of-aetheraudit"
+id="toc-position-of-aetheraudit">3.3 Position of AetherAudit</a></li>
+</ul></li>
+<li><a href="#central-question-and-scope"
+id="toc-central-question-and-scope">4. Central Question and Scope</a>
+<ul>
+<li><a href="#the-question" id="toc-the-question">4.1 The
+question</a></li>
+<li><a href="#five-functions-fn1fn5" id="toc-five-functions-fn1fn5">4.2
+Five functions (Fn1–Fn5)</a></li>
+<li><a href="#non-assumptions" id="toc-non-assumptions">4.3
+Non-assumptions</a></li>
+</ul></li>
+<li><a href="#architectural-hypothesis"
+id="toc-architectural-hypothesis">5. Architectural Hypothesis</a>
+<ul>
+<li><a href="#the-hypothesis" id="toc-the-hypothesis">5.1 The
+hypothesis</a></li>
+<li><a href="#boundaries-with-the-seven-foundational-dimensions"
+id="toc-boundaries-with-the-seven-foundational-dimensions">5.2
+Boundaries with the seven foundational dimensions</a></li>
+<li><a href="#what-the-hypothesis-does-not-claim"
+id="toc-what-the-hypothesis-does-not-claim">5.3 What the hypothesis does
+not claim</a></li>
+</ul></li>
+<li><a href="#falsification-methodology"
+id="toc-falsification-methodology">6. Falsification Methodology</a>
+<ul>
+<li><a href="#falsification-first-not-confirmation-first"
+id="toc-falsification-first-not-confirmation-first">6.1
+Falsification-first, not confirmation-first</a></li>
+<li><a href="#failure-conditions-a-f1-a-f4"
+id="toc-failure-conditions-a-f1-a-f4">6.2 Failure conditions A-F1 →
+A-F4</a></li>
+<li><a href="#decision-rule" id="toc-decision-rule">6.3 Decision
+rule</a></li>
+</ul></li>
+<li><a href="#propositions-p1p2" id="toc-propositions-p1p2">7.
+Propositions P1–P2</a>
+<ul>
+<li><a href="#p1-determinism-of-reconstruction"
+id="toc-p1-determinism-of-reconstruction">7.1 P1: determinism of
+reconstruction</a></li>
+<li><a href="#p2-irreducible-trust-anchor"
+id="toc-p2-irreducible-trust-anchor">7.2 P2: irreducible trust
+anchor</a></li>
+<li><a href="#what-p1-and-p2-do-not-establish"
+id="toc-what-p1-and-p2-do-not-establish">7.3 What P1 and P2 do not
+establish</a></li>
+</ul></li>
+<li><a href="#decision-phase-4" id="toc-decision-phase-4">8. Decision
+(Phase 4)</a>
+<ul>
+<li><a href="#e-undetermined-interim"
+id="toc-e-undetermined-interim">8.1 (E) Undetermined (interim)</a></li>
+<li><a href="#why-not-a-accept" id="toc-why-not-a-accept">8.2 Why not
+(A) accept</a></li>
+<li><a href="#why-not-r-reject" id="toc-why-not-r-reject">8.3 Why not
+(R) reject</a></li>
+<li><a href="#what-would-change-the-decision"
+id="toc-what-would-change-the-decision">8.4 What would change the
+decision</a></li>
+</ul></li>
+<li><a href="#evaluation-design-proposal-not-executed"
+id="toc-evaluation-design-proposal-not-executed">9. Evaluation Design
+(Proposal, Not Executed)</a>
+<ul>
+<li><a href="#scenarios-s1s6" id="toc-scenarios-s1s6">9.1 Scenarios
+S1–S6</a></li>
+<li><a href="#metrics-m1m9" id="toc-metrics-m1m9">9.2 Metrics
+M1–M9</a></li>
+<li><a href="#baselines-b1b5" id="toc-baselines-b1b5">9.3 Baselines
+B1–B5</a></li>
+<li><a href="#mapping-scenarios-metrics-failure-conditions"
+id="toc-mapping-scenarios-metrics-failure-conditions">9.4 Mapping
+scenarios → metrics → failure conditions</a></li>
+<li><a href="#no-measurement-has-been-executed"
+id="toc-no-measurement-has-been-executed">9.5 No measurement has been
+executed</a></li>
+</ul></li>
+<li><a href="#threats-to-validity" id="toc-threats-to-validity">10.
+Threats to Validity</a></li>
+<li><a href="#discussion" id="toc-discussion">11. Discussion</a>
+<ul>
+<li><a href="#what-aetheraudit-would-change-if-independent"
+id="toc-what-aetheraudit-would-change-if-independent">11.1 What
+AetherAudit would change if independent</a></li>
+<li><a href="#what-it-would-not-change"
+id="toc-what-it-would-not-change">11.2 What it would not change</a></li>
+<li><a href="#why-undetermined-is-a-legitimate-result"
+id="toc-why-undetermined-is-a-legitimate-result">11.3 Why “undetermined”
+is a legitimate result</a></li>
+</ul></li>
+<li><a href="#conclusion" id="toc-conclusion">12. Conclusion</a></li>
+<li><a href="#acknowledgements"
+id="toc-acknowledgements">Acknowledgements</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#appendix-a-aether-family-10-projects"
+id="toc-appendix-a-aether-family-10-projects">Appendix A — Aether family
+(10 projects)</a></li>
+<li><a href="#appendix-b-glossary" id="toc-appendix-b-glossary">Appendix
+B — Glossary</a></li>
+<li><a href="#appendix-c-change-log-v0.1.0-v1.0.0"
+id="toc-appendix-c-change-log-v0.1.0-v1.0.0">Appendix C — Change log
+(v0.1.0 → v1.0.0)</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="aetheraudit-verifiable-evidence-and-accountability-infrastructure-for-autonomous-agent-systems">AetherAudit:
+Verifiable Evidence and Accountability Infrastructure for Autonomous
+Agent Systems</h1>
+<p><strong>A Falsification-First Investigation of Audit, Evidence, and
+Responsibility in Decentralized Multi-Agent Systems</strong></p>
+<p><strong>Samir Baladi</strong> Ronin Institute / Rite of Renaissance
+ORCID: <a
+href="https://orcid.org/0009-0003-8903-0029">0009-0003-8903-0029</a> ·
+Email: gitdeeper@gmail.com <strong>Version:</strong> 1.0.0 ·
+<strong>Date:</strong> November 2026 · <strong>DOI:</strong> <a
+href="https://doi.org/10.5281/zenodo.24274628">10.5281/zenodo.24274628</a>
+<strong>License:</strong> CC-BY-4.0</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>AetherAudit is the tenth candidate of the Aether family. It
+investigates whether a decentralized audit gap genuinely exists between
+runtime monitoring (AetherRuntime), policy enforcement (AetherPolicy),
+and identity (AetherIdentity). The central question is: <em>how can
+operational evidence be produced, kept intact, and used to reconstruct
+what actually happened and attribute responsibility — in decentralized
+autonomous agent systems — independently of runtime monitoring and
+policy enforcement?</em> Five functions (Fn1–Fn5) are proposed: Evidence
+Capture, Evidence Integrity, Execution Reconstruction, Responsibility
+Attribution, and Audit Verification. Four failure conditions (A-F1–A-F4)
+are stated. None has been falsified by argument alone, but A-F4
+(observable benefit) is untested. Two propositions are stated as proof
+sketches: P1 (determinism of reconstruction) is near-trivial; P2
+(irreducible trust anchor) cuts against independence. The Phase 4
+decision is <strong>(E) undetermined (interim)</strong>: the evidence is
+insufficient to accept AetherAudit as an independent architectural
+dimension, and insufficient to reject it. No implementation, test, or
+experiment is reported. AetherAudit is a candidate, not a result.</p>
+<p><strong>Keywords:</strong> audit, evidence integrity, accountability,
+autonomous agents, multi-agent systems, falsification-first methodology,
+architectural investigation</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="the-aether-family-and-the-tenth-candidate">1.1 The Aether family
+and the tenth candidate</h3>
+<p>The Aether family currently has seven foundational dimensions and two
+unresolved candidates. The foundational dimensions are AetherGit
+(storage), AetherFlow (integration), AetherProof (verification),
+AetherMesh (decentralization), AetherGovern (governance authority),
+AetherRuntime (runtime assurance), and AetherOrchestrate
+(orchestration). The candidates are AetherIdentity (eighth) and
+AetherPolicy (ninth), both of which remain unresolved. AetherAudit is
+proposed as the tenth candidate.</p>
+<p>AetherAudit does not replace any existing project. It does not
+renumber any existing project. Its independence from the existing
+dimensions is not assumed; it is the subject of this investigation.</p>
+<h3 id="why-audit-is-not-monitoring-not-policy-not-identity">1.2 Why
+audit is not monitoring, not policy, not identity</h3>
+<p>Three questions are frequently conflated in discussions of autonomous
+agent systems:</p>
+<ul>
+<li><strong>AetherRuntime</strong> asks: <em>what is happening during
+execution?</em></li>
+<li><strong>AetherPolicy</strong> asks: <em>is this action permitted by
+the policy?</em></li>
+<li><strong>AetherIdentity</strong> asks: <em>who is the acting
+agent?</em></li>
+</ul>
+<p>AetherAudit asks a different question: <em>what can be proven after
+the fact, with what evidence, and on whom does responsibility
+fall?</em></p>
+<p>A system can be monitored, policy-compliant, and identity-resolved,
+and still be <strong>non-auditable</strong>. The evidence required to
+reconstruct an action may not have been captured; the captured evidence
+may not have been kept intact; the identity may not be linkable to the
+action; and the verification procedure may depend on trust in the
+auditor rather than on the evidence itself.</p>
+<p>This distinction is not new. Recent work on auditable agents (arXiv,
+2026) explicitly separates accountability from auditability and from the
+audit process, and states five conditions for auditability: action
+recovery, lifecycle coverage, policy-checkability from evidence,
+responsibility attribution, and evidence integrity. Internet-Drafts from
+IETF for agent-to-agent communication (A2A) separate identity,
+delegation, and audit. Provenance literature and tamper-evident log
+literature provide primitives that an audit layer would consume.</p>
+<p>But the existence of audit research does not establish the existence
+of an independent architectural dimension within Aether. That is the
+question this paper tests.</p>
+<h3 id="contribution-and-non-contribution">1.3 Contribution and
+non-contribution</h3>
+<p>This paper contributes:</p>
+<ol type="1">
+<li>A stated hypothesis, formulated to be falsifiable.</li>
+<li>Five functions (Fn1–Fn5) proposed as an initial scope.</li>
+<li>Four failure conditions (A-F1–A-F4) stated.</li>
+<li>Two propositions (P1–P2) as proof sketches.</li>
+<li>A Phase 4 decision of <strong>(E) undetermined
+(interim)</strong>.</li>
+</ol>
+<p>This paper does <strong>not</strong> contribute: an implementation, a
+specification, an experiment, a benchmark, or a claim of independence.
+It does not propose an API, a schema, a protocol, or a reference
+architecture. It does not claim that AetherAudit is the tenth dimension;
+it claims that AetherAudit is the tenth candidate, and that its status
+is undetermined.</p>
+<hr />
+<h2 id="related-work">2. Related Work</h2>
+<h3 id="auditable-agents">2.1 Auditable agents</h3>
+<p>The recent literature on auditable agents (arXiv, 2026) distinguishes
+three concepts that are often conflated: <strong>accountability</strong>
+(who is responsible), <strong>auditability</strong> (whether the system
+can be audited), and <strong>the audit process</strong> (the procedure
+by which an auditor reaches a verdict). It states five conditions for
+auditability: (i) action recovery, (ii) lifecycle coverage, (iii)
+policy-checkability from evidence, (iv) responsibility attribution, and
+(v) evidence integrity. AetherAudit adopts these conditions as a
+starting point, but does not assume them to be complete or sufficient.
+[citation needed]</p>
+<h3 id="ietf-a2a-drafts">2.2 IETF A2A drafts</h3>
+<p>Internet-Drafts for agent-to-agent (A2A) communication separate
+<strong>identity</strong>, <strong>delegation</strong>,
+<strong>audit</strong>, and <strong>provenance</strong>. These drafts
+are working documents, not standards. They reinforce the point that
+identity and audit are distinct responsibilities; they do not resolve
+the architectural question of whether audit is an independent dimension
+within a family of dimensions. [citation needed]</p>
+<h3 id="provenance-and-tamper-evident-logs">2.3 Provenance and
+tamper-evident logs</h3>
+<p>The provenance literature (W3C PROV and successors) and the
+tamper-evident log literature (Merkle trees, transparency logs) provide
+primitives that AetherAudit would consume but would not replace.
+AetherProof is the natural home for verification primitives within the
+Aether family; AetherMesh is the natural home for distribution
+primitives. The question is whether AetherAudit adds a remainder beyond
+these.</p>
+<h3 id="accountability-in-multi-agent-systems">2.4 Accountability in
+multi-agent systems</h3>
+<p>Accountability has been studied in multi-agent systems under
+<strong>norms</strong>, <strong>sanctions</strong>, and
+<strong>institutions</strong>. These frameworks describe what
+accountability <em>is</em>; they do not, in themselves, provide the
+evidence infrastructure required to <em>establish</em> accountability
+after the fact. The literature distinguishes attribution (who acted),
+responsibility (who is answerable), and liability (who bears the
+consequence). AetherAudit is concerned with the first two, not with
+liability.</p>
+<h3 id="the-gap">2.5 The gap</h3>
+<p>The gap, if it exists, is not the absence of audit research. It is
+the absence of an architectural placement of audit responsibilities
+within the Aether family — specifically, a placement that is not already
+covered by AetherRuntime, AetherPolicy, AetherIdentity, AetherGit,
+AetherProof, or AetherGovern. Whether this gap is real is the subject of
+A-F1 and A-F2.</p>
+<hr />
+<h2 id="the-aether-family-context">3. The Aether Family Context</h2>
+<h3 id="seven-foundational-dimensions">3.1 Seven foundational
+dimensions</h3>
+<p>The seven foundational dimensions are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>Project</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>AetherGit</td>
+<td>Storage and versioning</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>AetherFlow</td>
+<td>Integration</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>AetherProof</td>
+<td>Verification</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>AetherMesh</td>
+<td>Decentralization</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>AetherGovern</td>
+<td>Governance authority</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>AetherRuntime</td>
+<td>Runtime assurance</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>AetherOrchestrate</td>
+<td>Orchestration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="candidates-8-and-9">3.2 Candidates 8 and 9</h3>
+<p>AetherIdentity (eighth) and AetherPolicy (ninth) are candidates, not
+foundational dimensions. AetherIdentity has a paper and a v2.0.0
+implementation, but its architectural independence is unresolved.
+AetherPolicy has a paper and a Phase 4 decision of (E) undetermined, and
+no implementation. Neither is replaced by AetherAudit.</p>
+<h3 id="position-of-aetheraudit">3.3 Position of AetherAudit</h3>
+<p>AetherAudit is the tenth candidate. It is positioned between
+AetherGovern (which supplies authority to issue verdicts), AetherProof
+(which supplies verification primitives), AetherMesh (which supplies
+distribution primitives), AetherGit (which supplies storage),
+AetherRuntime (which supplies runtime observations), AetherPolicy (which
+supplies compliance decisions), and AetherIdentity (which supplies
+identity). The question is whether this position is a <em>distinct
+architectural dimension</em> or a <em>feature</em> of one or more
+existing dimensions.</p>
+<hr />
+<h2 id="central-question-and-scope">4. Central Question and Scope</h2>
+<h3 id="the-question">4.1 The question</h3>
+<blockquote>
+<p>How can operational evidence be produced, kept intact, and used to
+reconstruct what actually happened and attribute responsibility — in
+decentralized autonomous agent systems — independently of runtime
+monitoring and policy enforcement?</p>
+</blockquote>
+<h3 id="five-functions-fn1fn5">4.2 Five functions (Fn1–Fn5)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>Function</th>
+<th>Question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Fn1</td>
+<td>Evidence Capture</td>
+<td>How is evidence about an action, in its context, captured so that it
+can be examined later?</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fn2</td>
+<td>Evidence Integrity</td>
+<td>How is evidence integrity ensured, and how is tampering or deletion
+detected?</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fn3</td>
+<td>Execution Reconstruction</td>
+<td>How is the execution trace — actions, transformations, and
+delegations — rebuilt, including when records are incomplete?</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fn4</td>
+<td>Responsibility Attribution</td>
+<td>How is responsibility attributed to an agent, principal, or
+delegation chain in a defensible way?</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fn5</td>
+<td>Audit Verification</td>
+<td>How can an independent party verify evidence and issue an audit
+verdict without assuming trust in the auditor?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="non-assumptions">4.3 Non-assumptions</h3>
+<p>The five functions are <strong>not</strong> assumed to be complete,
+independent, or necessary. A later phase may drop one, merge two, or add
+a sixth. They are an initial scope, not a final list.</p>
+<hr />
+<h2 id="architectural-hypothesis">5. Architectural Hypothesis</h2>
+<h3 id="the-hypothesis">5.1 The hypothesis</h3>
+<blockquote>
+<p>A potentially independent architectural gap may exist between runtime
+monitoring, policy enforcement, and identity: the operational management
+of audit evidence — its capture, integrity, reconstruction, attribution,
+and independent verification — across decentralized autonomous
+agents.</p>
+</blockquote>
+<p>This hypothesis is stated to be falsifiable. It is falsified if:</p>
+<ul>
+<li>AetherRuntime already provides all audit requirements without an
+additional layer (A-F1).</li>
+<li>AetherGit plus runtime logs plus policy decisions cover the five
+functions with bounded integration (A-F2).</li>
+<li>No independent properties of evidence integrity, reconstruction, or
+attribution exist (A-F2).</li>
+<li>The candidate is only an aggregation of existing logs under a
+unified interface (A-F2).</li>
+<li>A central audit authority is required (A-F3).</li>
+<li>No observable benefit is demonstrated (A-F4).</li>
+</ul>
+<h3 id="boundaries-with-the-seven-foundational-dimensions">5.2
+Boundaries with the seven foundational dimensions</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Responsibility</th>
+<th>Relation to AetherAudit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AetherGit</td>
+<td>Storage and versioning</td>
+<td>AetherAudit consumes evidence storage; it does not store source</td>
+</tr>
+<tr>
+<td>AetherFlow</td>
+<td>Integration</td>
+<td>AetherAudit records integration events as evidence; it does not
+integrate</td>
+</tr>
+<tr>
+<td>AetherProof</td>
+<td>Verification</td>
+<td>AetherAudit consumes verification primitives; it does not replace
+AetherProof</td>
+</tr>
+<tr>
+<td>AetherMesh</td>
+<td>Decentralization</td>
+<td>AetherAudit relies on AetherMesh for distribution; it does not
+distribute itself</td>
+</tr>
+<tr>
+<td>AetherGovern</td>
+<td>Governance authority</td>
+<td>AetherAudit consumes authority to issue verdicts; it does not issue
+it</td>
+</tr>
+<tr>
+<td>AetherRuntime</td>
+<td>Runtime assurance</td>
+<td>AetherAudit consumes runtime observations as evidence; it does not
+monitor</td>
+</tr>
+<tr>
+<td>AetherOrchestrate</td>
+<td>Orchestration</td>
+<td>AetherAudit records orchestration decisions as evidence; it does not
+orchestrate</td>
+</tr>
+</tbody>
+</table>
+<p>Additional boundaries with candidates:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Relation to AetherAudit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AetherIdentity</td>
+<td>AetherAudit uses identity to attribute responsibility; it does not
+determine identity</td>
+</tr>
+<tr>
+<td>AetherPolicy</td>
+<td>AetherAudit records compliance decisions as evidence; it does not
+evaluate policy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-the-hypothesis-does-not-claim">5.3 What the hypothesis does
+not claim</h3>
+<p>The hypothesis does not claim that:</p>
+<ul>
+<li>AetherAudit is an independent architectural dimension.</li>
+<li>The five functions are complete, independent, or necessary.</li>
+<li>The boundaries with the existing dimensions are sufficient.</li>
+<li>The gap is genuine.</li>
+<li>Implementation should begin.</li>
+<li>Any observable benefit has been demonstrated.</li>
+</ul>
+<hr />
+<h2 id="falsification-methodology">6. Falsification Methodology</h2>
+<h3 id="falsification-first-not-confirmation-first">6.1
+Falsification-first, not confirmation-first</h3>
+<p>AetherAudit follows the falsification-first methodology of
+AetherPolicy. A candidate is accepted only if it survives its failure
+conditions, not if it accumulates supporting evidence. This is a
+methodological choice: it is easier to accumulate support than to
+demonstrate survival.</p>
+<h3 id="failure-conditions-a-f1-a-f4">6.2 Failure conditions A-F1 →
+A-F4</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">ID</th>
+<th>Claim under test</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A-F1</td>
+<td>Non-redundancy: not covered by Runtime / Policy / Identity</td>
+<td style="text-align: center;">🟡 Not falsified (author’s reading of
+own records)</td>
+</tr>
+<tr>
+<td style="text-align: center;">A-F2</td>
+<td>Distinction from Runtime + Git (a remainder survives after
+composition)</td>
+<td style="text-align: center;">🟡 Not falsified (remainder may be
+small)</td>
+</tr>
+<tr>
+<td style="text-align: center;">A-F3</td>
+<td>Decentralizability: no central audit authority required</td>
+<td style="text-align: center;">🟡 Not falsified (residuals: revocation
+window, honest auditor)</td>
+</tr>
+<tr>
+<td style="text-align: center;">A-F4</td>
+<td>Observable benefit</td>
+<td style="text-align: center;">🔴 <strong>Untested</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>“Not falsified” is a weaker status than “confirmed”. “Untested” is
+not a pass. The decision rule requires all four to be tested with none
+falsified, and A-F4 supported by measured results.</p>
+</blockquote>
+<h3 id="decision-rule">6.3 Decision rule</h3>
+<p>If any of A-F1, A-F2, or A-F3 is falsified: the candidate is
+<strong>rejected</strong>. If all of A-F1, A-F2, A-F3 are not falsified
+but A-F4 is untested: the candidate is <strong>(E)
+undetermined</strong>. If all four are not falsified and A-F4 is
+supported by measured results: the candidate is <strong>(A)
+accepted</strong>. If the candidate is better classified as a feature of
+an existing dimension: it is <strong>(F) folded</strong>. If the
+decision is postponed for an external reason: <strong>(D)
+deferred</strong>.</p>
+<hr />
+<h2 id="propositions-p1p2">7. Propositions P1–P2</h2>
+<h3 id="p1-determinism-of-reconstruction">7.1 P1: determinism of
+reconstruction</h3>
+<p><strong>Statement.</strong> If the evidence is complete and intact,
+reconstruction of the execution trace is a deterministic function of the
+evidence.</p>
+<p><strong>Status.</strong> Proof sketch. P1 is close to trivial: it
+says that a pure function of its inputs is a function of its inputs. Its
+content is in the conditions of <strong>completeness</strong> and
+<strong>intactness</strong>, which real systems can violate. The
+conditions (Purity1–Purity4) are not stated formally here; they are the
+subject of future work.</p>
+<h3 id="p2-irreducible-trust-anchor">7.2 P2: irreducible trust
+anchor</h3>
+<p><strong>Statement.</strong> Any deterministic, interactive
+audit-verification procedure rests on a trust anchor that the evidence
+itself cannot supply.</p>
+<p><strong>Status.</strong> Proof sketch. P2 rests on a symmetry
+argument: a binary verification outcome (accept / reject) requires a
+decision about <em>standing</em> when the evidence does not determine
+it. The decision about standing is plausibly a governance matter. This
+cuts <strong>against</strong> independence: if the trust anchor is
+AetherGovern, then audit verification is a governance function, not an
+independent one.</p>
+<h3 id="what-p1-and-p2-do-not-establish">7.3 What P1 and P2 do not
+establish</h3>
+<p>P1 does not establish that reconstruction is possible in practice; it
+only establishes that reconstruction is a function of evidence, if
+evidence is complete and intact. P2 does not establish that audit
+verification requires a central authority; it only establishes that it
+requires an anchor. Neither is machine-checked.</p>
+<hr />
+<h2 id="decision-phase-4">8. Decision (Phase 4)</h2>
+<h3 id="e-undetermined-interim">8.1 (E) Undetermined (interim)</h3>
+<p>AetherAudit is classified as <strong>(E) undetermined
+(interim)</strong>. The evidence is insufficient to accept AetherAudit
+as an independent dimension, and insufficient to reject it. A test is
+needed to decide.</p>
+<h3 id="why-not-a-accept">8.2 Why not (A) accept</h3>
+<ul>
+<li>A-F4 is untested: no benefit has been measured.</li>
+<li>A-F2 remainder may be small.</li>
+<li>A-F3 has residuals: revocation window, honest auditor.</li>
+<li>P1 is near-trivial; P2 cuts against independence.</li>
+<li>AetherIdentity (which supplies one of the inputs) is itself
+unresolved.</li>
+</ul>
+<h3 id="why-not-r-reject">8.3 Why not (R) reject</h3>
+<ul>
+<li>No failure condition has been falsified.</li>
+<li>The comparison found a remainder after composition with the
+neighbours (A-F2).</li>
+<li>The decentralization argument did not reach a requirement for a
+central decision point (A-F3).</li>
+<li>The rejection would rest on the same author’s reading that is here
+judged insufficient to accept.</li>
+</ul>
+<h3 id="what-would-change-the-decision">8.4 What would change the
+decision</h3>
+<p>To move from (E) to (A):</p>
+<ol type="1">
+<li>A-F4 must be supported by measured results from a scenario that
+exercises Fn1–Fn5.</li>
+<li>A-F2 must be shown to yield a non-trivial remainder.</li>
+<li>A-F3 must be shown to hold without an honest-auditor
+assumption.</li>
+</ol>
+<p>To move from (E) to (R):</p>
+<ol type="1">
+<li>A-F1 or A-F2 must be falsified.</li>
+</ol>
+<p>To move from (E) to (F):</p>
+<ol type="1">
+<li>The remainder must be shown to fit within a single existing
+dimension.</li>
+</ol>
+<hr />
+<h2 id="evaluation-design-proposal-not-executed">9. Evaluation Design
+(Proposal, Not Executed)</h2>
+<h3 id="scenarios-s1s6">9.1 Scenarios S1–S6</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>Distributed multi-agent environment, no central audit authority</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Missing logs — reconstruction under incomplete evidence</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Evidence tampering — detection and integrity preservation</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>Deep delegation chain — attribution across a chain</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>Inter-agent dispute — independent audit and verdict</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>Long-term retention — audit evidence across time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metrics-m1m9">9.2 Metrics M1–M9</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1</td>
+<td>Evidence completeness</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>Evidence integrity</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>Reconstruction accuracy</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>Attribution accuracy</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>Verification independence</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>Retrieval latency</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>Evidence size</td>
+</tr>
+<tr>
+<td>M8</td>
+<td>Auditability</td>
+</tr>
+<tr>
+<td>M9</td>
+<td>Tamper resistance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="baselines-b1b5">9.3 Baselines B1–B5</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Baseline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>No audit layer (runtime + Git only)</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>AetherRuntime + AetherGit, manual audit</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>AetherRuntime + AetherGit + AetherPolicy</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>AetherRuntime + AetherGit + AetherPolicy + AetherProof</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>AetherRuntime + AetherGit + AetherPolicy + AetherProof +
+AetherMesh</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mapping-scenarios-metrics-failure-conditions">9.4 Mapping
+scenarios → metrics → failure conditions</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Metrics</th>
+<th>Failure condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>M5, M8</td>
+<td>A-F3</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>M3</td>
+<td>A-F2</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>M2, M9</td>
+<td>A-F1</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>M4</td>
+<td>A-F1, A-F2</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>M5, M8</td>
+<td>A-F4</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>M1, M7</td>
+<td>A-F4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="no-measurement-has-been-executed">9.5 No measurement has been
+executed</h3>
+<p><strong>No measurement has been executed.</strong> Section 9 is a
+proposal, not a result. The mapping from scenarios to metrics to failure
+conditions is a design, not an evaluation.</p>
+<hr />
+<h2 id="threats-to-validity">10. Threats to Validity</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">ID</th>
+<th>Threat</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T1</td>
+<td>Author-on-author reasoning</td>
+<td>A-F1–A-F3 rest on the author’s reading of the author’s own
+records</td>
+</tr>
+<tr>
+<td style="text-align: center;">T2</td>
+<td>No independent review</td>
+<td>Phase 2 (Hypothesis Review) has not started</td>
+</tr>
+<tr>
+<td style="text-align: center;">T3</td>
+<td>Small A-F2 remainder</td>
+<td>A-F2’s non-falsification may reflect a small remainder rather than
+an independent dimension</td>
+</tr>
+<tr>
+<td style="text-align: center;">T4</td>
+<td>Honest-auditor assumption</td>
+<td>A-F3 assumes an honest auditor; adversarial auditors are not
+considered</td>
+</tr>
+<tr>
+<td style="text-align: center;">T5</td>
+<td>Irreducible trust anchor</td>
+<td>P2 cuts against independence, but its strength is not
+established</td>
+</tr>
+<tr>
+<td style="text-align: center;">T6</td>
+<td>No measurement</td>
+<td>A-F4 is untested</td>
+</tr>
+<tr>
+<td style="text-align: center;">T7</td>
+<td>Unresolved AetherIdentity</td>
+<td>The eighth project is itself unresolved</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="discussion">11. Discussion</h2>
+<h3 id="what-aetheraudit-would-change-if-independent">11.1 What
+AetherAudit would change if independent</h3>
+<p>If AetherAudit is accepted as independent, it would provide an
+architectural home for the audit responsibilities that are currently
+distributed across Runtime (monitoring), Policy (enforcement), Identity
+(attribution), Proof (verification), Mesh (distribution), and Git
+(storage). It would not replace any of these; it would add a placement
+that is currently missing.</p>
+<h3 id="what-it-would-not-change">11.2 What it would not change</h3>
+<p>AetherAudit would not change the responsibilities of the existing
+dimensions. It would not replace AetherRuntime, AetherPolicy,
+AetherIdentity, AetherProof, AetherMesh, AetherGit, AetherGovern, or
+AetherOrchestrate. It would consume their outputs and produce audit
+artifacts.</p>
+<h3 id="why-undetermined-is-a-legitimate-result">11.3 Why “undetermined”
+is a legitimate result</h3>
+<p>“Undetermined” is not a failure. It states that the evidence is
+insufficient to decide, and names what is missing. In a
+falsification-first methodology, “undetermined” is the correct outcome
+when a candidate has not been tested against its observable-benefit
+condition. It is the state of AetherPolicy, and it is the state of
+AetherAudit.</p>
+<hr />
+<h2 id="conclusion">12. Conclusion</h2>
+<p>AetherAudit is the tenth candidate of the Aether family. It is a
+research repository, not a software repository. It contains a
+hypothesis, five functions, four failure conditions, and two
+propositions. The Phase 4 decision is <strong>(E) undetermined
+(interim)</strong>. No implementation, test, or experiment is reported.
+The next step is independent review, not implementation.</p>
+<p><strong>AetherAudit is a candidate, not a result.</strong></p>
+<hr />
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>The author thanks the Ronin Institute and Rite of Renaissance for
+institutional support. The paper is a continuation of the
+falsification-first methodology developed in AetherPolicy v0.1.0.</p>
+<hr />
+<h2 id="references">References</h2>
+<ol type="1">
+<li>Baladi, S. (2026). <em>AetherPolicy: Decentralized Policy Lifecycle
+and Enforcement for Autonomous Agent Systems</em>. Zenodo. DOI:
+10.5281/zenodo.24160047.</li>
+<li>Auditable Agents. (2026). arXiv preprint. [citation needed]</li>
+<li>IETF A2A drafts. (2026). Internet-Drafts. [citation needed]</li>
+<li>Moreau, L., &amp; Groth, P. (2013). <em>Provenance: An Introduction
+to PROV</em>. Morgan &amp; Claypool.</li>
+<li>Crosby, S., &amp; Wallach, D. (2009). <em>Efficient Data Structures
+for Tamper-Evident Logging</em>. USENIX Security.</li>
+<li>Laurie, B., Langley, A., &amp; Kasper, E. (2013). <em>Certificate
+Transparency</em>. RFC 6962.</li>
+<li>[citation needed] — multi-agent accountability literature.</li>
+<li>[citation needed] — norms and sanctions in multi-agent systems.</li>
+<li>[citation needed] — provenance in distributed systems.</li>
+<li>[citation needed] — auditability in distributed systems.</li>
+</ol>
+<p><em>Additional references to be added in v1.0.1.</em></p>
+<hr />
+<h2 id="appendix-a-aether-family-10-projects">Appendix A — Aether family
+(10 projects)</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>Project</th>
+<th>Status</th>
+<th>DOI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>AetherGit</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.23976986</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>AetherFlow</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.23979129</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>AetherProof</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.24013124</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>AetherMesh</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.24038038</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>AetherGovern</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.24054524</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>AetherRuntime</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.24078477</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>AetherOrchestrate</td>
+<td>Foundational</td>
+<td>10.5281/zenodo.24095399</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>AetherIdentity</td>
+<td>Candidate</td>
+<td>10.5281/zenodo.24102739</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>AetherPolicy</td>
+<td>Candidate</td>
+<td>10.5281/zenodo.24160047</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td><strong>AetherAudit</strong></td>
+<td><strong>Candidate (this paper)</strong></td>
+<td><strong>10.5281/zenodo.24274628</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="appendix-b-glossary">Appendix B — Glossary</h2>
+<ul>
+<li><strong>A-F1–A-F4</strong>: Failure conditions for AetherAudit.</li>
+<li><strong>Fn1–Fn5</strong>: Five functions proposed as initial
+scope.</li>
+<li><strong>P1–P2</strong>: Two propositions stated as proof
+sketches.</li>
+<li><strong>(E) undetermined</strong>: The Phase 4 decision state —
+insufficient to accept, insufficient to reject.</li>
+<li><strong>Evidence Bundle</strong>: The set of artifacts captured
+about an action, in its context.</li>
+<li><strong>Sealed Evidence</strong>: Evidence that has been hashed,
+signed, and distributed.</li>
+<li><strong>Reconstructed Trace</strong>: The rebuilt execution
+sequence, derived from evidence.</li>
+<li><strong>Attribution Report</strong>: The mapping from an action to
+an agent, principal, or delegation chain.</li>
+<li><strong>Audit Verdict</strong>: The outcome issued by an independent
+verifier.</li>
+</ul>
+<hr />
+<h2 id="appendix-c-change-log-v0.1.0-v1.0.0">Appendix C — Change log
+(v0.1.0 → v1.0.0)</h2>
+<p><strong>v0.1.0</strong> (November 2026, hypothetical initial draft):
+- Central question stated. - Five functions (Fn1–Fn5) proposed. - Four
+failure conditions (A-F1–A-F4) stated. - Two propositions (P1–P2) as
+proof sketches. - Decision: (E) undetermined.</p>
+<p><strong>v1.0.0</strong> (November 2026, this paper): - Related Work
+expanded. - Aether family context expanded. - Boundaries with the seven
+foundational dimensions + two candidates. - Evaluation design (Section
+9) added as a proposal, not executed. - Threats to validity (Section 10)
+added. - Appendices A–C added. - DOI assigned:
+10.5281/zenodo.24274628.</p>
+<hr />
+<p><strong>AetherAudit v1.0.0</strong> © 2026 Samir Baladi — Ronin
+Institute / Rite of Renaissance DOI: <a
+href="https://doi.org/10.5281/zenodo.24274628">10.5281/zenodo.24274628</a>
+License: CC-BY-4.0</p>
+<p><strong>AetherAudit is a candidate, not a result.</strong></p>
+</body>
+</html>

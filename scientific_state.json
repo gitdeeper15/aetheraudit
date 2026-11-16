@@ -1,0 +1,65 @@
+{
+  "project": "AetherAudit",
+  "version": "1.0.0",
+  "date": "2026-11-16",
+  "phase": 4,
+  "phase_name": "Independence Decision",
+  "phase_status": "interim",
+  "decision": "E_undetermined",
+  "decision_rationale": {
+    "insufficient_to_accept": [
+      "A-F4 is untested",
+      "A-F2 remainder may be small",
+      "A-F3 has residuals (revocation window, honest auditor)",
+      "P1 is near-trivial; P2 cuts against independence",
+      "AetherIdentity is itself unresolved"
+    ],
+    "insufficient_to_reject": [
+      "No failure condition has been falsified",
+      "A-F2 remainder observed",
+      "A-F3 argument did not reach centralization requirement"
+    ]
+  },
+  "failure_conditions": {
+    "A-F1": "not_falsified",
+    "A-F2": "not_falsified",
+    "A-F3": "not_falsified",
+    "A-F4": "untested"
+  },
+  "propositions": {
+    "P1": "proof_sketch_near_trivial",
+    "P2": "proof_sketch_against_independence"
+  },
+  "threats": {
+    "T1": "author_on_author_reasoning",
+    "T2": "no_independent_review",
+    "T3": "small_remainder",
+    "T4": "honest_auditor_assumption",
+    "T5": "irreducible_trust_anchor",
+    "T6": "no_measurement",
+    "T7": "unresolved_aetheridentity"
+  },
+  "counts": {
+    "functions": 5,
+    "failure_conditions": 4,
+    "propositions": 2,
+    "boundaries": 8,
+    "open_questions": 10,
+    "figures": 9,
+    "tests_run": 0,
+    "experiments_executed": 0,
+    "implementations": 0
+  },
+  "claims_not_made": [
+    "independence_of_the_dimension",
+    "completeness_of_the_five_functions",
+    "sufficiency_of_the_boundaries",
+    "genuineness_of_the_gap",
+    "observable_benefit",
+    "causal_effect"
+  ],
+  "doi": {
+    "zenodo": "10.5281/zenodo.24274628",
+    "figshare": "10.6084/m9.figshare.35023519"
+  }
+}

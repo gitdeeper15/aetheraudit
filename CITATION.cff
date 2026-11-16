@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+type: software
+title: "AetherAudit: Verifiable Evidence and Accountability Infrastructure for Autonomous Agent Systems"
+abstract: "A falsification-first architectural investigation of audit, evidence, and responsibility in decentralized multi-agent systems. Phase 4 (undetermined). No implementation."
+authors:
+  - family-names: "Baladi"
+    given-names: "Samir"
+    orcid: "https://orcid.org/0009-0003-8903-0029"
+    email: "gitdeeper@gmail.com"
+    affiliation: "Ronin Institute / Rite of Renaissance"
+version: "1.0.0"
+date-released: "2026-11-16"
+license: "CC-BY-4.0"
+doi: "10.5281/zenodo.24274628"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24274628"
+    description: "Zenodo (primary)"
+  - type: doi
+    value: "10.6084/m9.figshare.35023519"
+    description: "Figshare (mirror)"
+url: "https://github.com/gitdeeper15/aetheraudit"
+repository-code: "https://github.com/gitdeeper15/aetheraudit"
+keywords:
+  - audit
+  - evidence integrity
+  - accountability
+  - autonomous agents
+  - multi-agent systems
+  - falsification-first methodology
+  - architectural investigation
