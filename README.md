@@ -244,21 +244,20 @@ What This Repository Does Not Claim
 
 ---
 
-Related Aether Projects
+## Related Aether Projects
 
-# Project Status DOI
-1 AetherGit Foundational 10.5281/zenodo.23976986
-2 AetherFlow Foundational 10.5281/zenodo.23979129
-3 AetherProof Foundational 10.5281/zenodo.24013124
-4 AetherMesh Foundational 10.5281/zenodo.24038038
-5 AetherGovern Foundational 10.5281/zenodo.24054524
-6 AetherRuntime Foundational 10.5281/zenodo.24078477
-7 AetherOrchestrate Foundational 10.5281/zenodo.24095399
-8 AetherIdentity Candidate (paper + v2.0.0) 10.5281/zenodo.24102739
-9 AetherPolicy Candidate (paused at Phase 4) 10.5281/zenodo.24160047
-10 AetherAudit Candidate (this repository) 10.5281/zenodo.24274628
-
----
+| # | Project | Status | DOI |
+|:-:|---|---|---|
+| 1 | AetherGit | Foundational | [10.5281/zenodo.23976986](https://doi.org/10.5281/zenodo.23976986) |
+| 2 | AetherFlow | Foundational | [10.5281/zenodo.23979129](https://doi.org/10.5281/zenodo.23979129) |
+| 3 | AetherProof | Foundational | [10.5281/zenodo.24013124](https://doi.org/10.5281/zenodo.24013124) |
+| 4 | AetherMesh | Foundational | [10.5281/zenodo.24038038](https://doi.org/10.5281/zenodo.24038038) |
+| 5 | AetherGovern | Foundational | [10.5281/zenodo.24054524](https://doi.org/10.5281/zenodo.24054524) |
+| 6 | AetherRuntime | Foundational | [10.5281/zenodo.24078477](https://doi.org/10.5281/zenodo.24078477) |
+| 7 | AetherOrchestrate | Foundational | [10.5281/zenodo.24095399](https://doi.org/10.5281/zenodo.24095399) |
+| 8 | AetherIdentity | Candidate (paper + v2.0.0) | [10.5281/zenodo.24102739](https://doi.org/10.5281/zenodo.24102739) |
+| 9 | AetherPolicy | Candidate (paused at Phase 4) | [10.5281/zenodo.24160047](https://doi.org/10.5281/zenodo.24160047) |
+| 10 | AetherAudit | Candidate (this repository) | [10.5281/zenodo.24274628](https://doi.org/10.5281/zenodo.24274628) |
 
 ## Figures
 
