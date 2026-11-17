@@ -260,43 +260,34 @@ Related Aether Projects
 
 ---
 
-Figures
+## Figures
 
-Figure 1 — The Ten Dimensions of the Aether Family
+### Figure 1 — The Ten Dimensions of the Aether Family
+![Figure 1](docs/figures/Fig1_Nine_Dimensions.png)
 
-docs/figures/Fig1_Nine_Dimensions.png
+### Figure 2 — AetherAudit Lifecycle
+![Figure 2](docs/figures/Fig2_Audit_Lifecycle.png)
 
-Figure 2 — AetherAudit Lifecycle
+### Figure 3 — The Five Functions of AetherAudit (Fn1–Fn5)
+![Figure 3](docs/figures/Fig3_Audit_Functions.png)
 
-docs/figures/Fig2_Audit_Lifecycle.png
+### Figure 4 — AetherAudit and Its Boundaries
+![Figure 4](docs/figures/Fig4_Boundaries.png)
 
-Figure 3 — The Five Functions of AetherAudit (Fn1–Fn5)
+### Figure 5 — The Falsification Procedure (A-F1 to A-F4)
+![Figure 5](docs/figures/Fig5_Falsification_Procedure.png)
 
-docs/figures/Fig3_Audit_Functions.png
+### Figure 6 — Phase Status (Paused at Phase 4)
+![Figure 6](docs/figures/Fig6_Phase_Status.png)
 
-Figure 4 — AetherAudit and Its Boundaries
+### Figure 7 — The Five Phase 4 Outcomes (A / R / E / F / D)
+![Figure 7](docs/figures/Fig7_Decision_Outcomes.png)
 
-docs/figures/Fig4_Boundaries.png
+### Figure 8 — Coverage Matrix: Five Functions × Existing Dimensions
+![Figure 8](docs/figures/Fig8_Overlap_Matrix.png)
 
-Figure 5 — The Falsification Procedure (A-F1 to A-F4)
-
-docs/figures/Fig5_Falsification_Procedure.png
-
-Figure 6 — Phase Status (Paused at Phase 4)
-
-docs/figures/Fig6_Phase_Status.png
-
-Figure 7 — The Five Phase 4 Outcomes (A / R / E / F / D)
-
-docs/figures/Fig7_Decision_Outcomes.png
-
-Figure 8 — Coverage Matrix: Five Functions × Existing Dimensions
-
-docs/figures/Fig8_Overlap_Matrix.png
-
-Figure 9 — Evaluation Design: Scenarios × Metrics × Failure Conditions
-
-docs/figures/Fig9_Evaluation_Design.png
+### Figure 9 — Evaluation Design: Scenarios × Metrics × Failure Conditions
+![Figure 9](docs/figures/Fig9_Evaluation_Design.png)
 
 Figures 1–9 are described in the paper.
 
