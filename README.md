@@ -217,32 +217,35 @@ No src/, no tests/, no experiments/.
 
 ---
 
-Phase Status
 
-Phase Description Status
-0 — Architectural Hypothesis The hypothesis is stated ✅ Complete (ARCHITECTURAL_HYPOTHESIS.md)
-1 — Responsibility Mapping Boundaries with existing dimensions ✅ Complete (research/RESPONSIBILITY_BOUNDARIES.md)
-2 — Hypothesis Review Independent review of hypothesis ⏳ Not started (REVIEW/INDEPENDENT_REVIEW.md)
-3 — Falsification Design Design of A-F1 to A-F4 tests ✅ Complete (FALSIFICATION/FALSIFICATION_PLAN.md)
-4 — Independence Decision (E) undetermined (interim) ⚠️ Interim (DECISIONS/INDEPENDENCE_DECISION.md)
-5 — Architectural Specification Requires positive Phase 4 ❌ Not permitted
-6 — Reference Implementation Requires Phase 5 ❌ Not permitted
+## Phase Status
 
-Note. The internal review (REVIEW/INTERNAL_REVIEW.md) is complete. The independent review (REVIEW/INDEPENDENT_REVIEW.md) has not started. The independent review protocol (REVIEW/INDEPENDENT_REVIEW_PROTOCOL.md) is ready to use.
+| Phase | Description | Status |
+|---|---|---|
+| 0 — Architectural Hypothesis | The hypothesis is stated | ✅ Complete (`ARCHITECTURAL_HYPOTHESIS.md`) |
+| 1 — Responsibility Mapping | Boundaries with existing dimensions | ✅ Complete (`research/RESPONSIBILITY_BOUNDARIES.md`) |
+| 2 — Hypothesis Review | Independent review of hypothesis | ⏳ Not started (`REVIEW/INDEPENDENT_REVIEW.md`) |
+| 3 — Falsification Design | Design of A-F1 to A-F4 tests | ✅ Complete (`FALSIFICATION/FALSIFICATION_PLAN.md`) |
+| 4 — Independence Decision | (E) undetermined (interim) | ⚠️ Interim (`DECISIONS/INDEPENDENCE_DECISION.md`) |
+| 5 — Architectural Specification | Requires positive Phase 4 | ❌ Not permitted |
+| 6 — Reference Implementation | Requires Phase 5 | ❌ Not permitted |
+
+**Note.** The internal review (`REVIEW/INTERNAL_REVIEW.md`) is complete. The independent review (`REVIEW/INDEPENDENT_REVIEW.md`) has not started. The independent review protocol (`REVIEW/INDEPENDENT_REVIEW_PROTOCOL.md`) is ready to use.
+
+---
+
+## What This Repository Does Not Claim
+
+- That AetherAudit is an independent architectural dimension.
+- That the five functions are complete, independent, or necessary.
+- That the boundaries with AetherRuntime, AetherPolicy, AetherIdentity, and the other dimensions are sufficient.
+- That the gap is genuine.
+- That implementation should begin.
+- Any observed benefit (A-F4 is untested).
+- Any causal effect.
 
 ---
 
-What This Repository Does Not Claim
-
-· That AetherAudit is an independent architectural dimension.
-· That the five functions are complete, independent, or necessary.
-· That the boundaries with AetherRuntime, AetherPolicy, AetherIdentity, and the other dimensions are sufficient.
-· That the gap is genuine.
-· That implementation should begin.
-· Any observed benefit (A-F4 is untested).
-· Any causal effect.
-
----
 
 ## Related Aether Projects
 
