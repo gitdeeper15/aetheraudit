@@ -262,16 +262,41 @@ Related Aether Projects
 
 Figures
 
-# Figure Description
-1 docs/figures/Fig1_Nine_Dimensions.png The ten dimensions of the Aether family, with AetherAudit as candidate #10
-2 docs/figures/Fig2_Audit_Lifecycle.png The AetherAudit lifecycle (Action → Capture → Integrity → Reconstruction → Attribution → Verification)
-3 docs/figures/Fig3_Audit_Functions.png The five functions of AetherAudit (Fn1–Fn5)
-4 docs/figures/Fig4_Boundaries.png AetherAudit and its boundaries with the seven foundational dimensions
-5 docs/figures/Fig5_Falsification_Procedure.png The falsification procedure (A-F1 to A-F4)
-6 docs/figures/Fig6_Phase_Status.png Phase status (paused at Phase 4)
-7 docs/figures/Fig7_Decision_Outcomes.png The five Phase 4 outcomes (A / R / E / F / D)
-8 docs/figures/Fig8_Overlap_Matrix.png Coverage matrix: five functions × existing dimensions
-9 docs/figures/Fig9_Evaluation_Design.png Evaluation design: scenarios × metrics × failure conditions
+Figure 1 — The Ten Dimensions of the Aether Family
+
+docs/figures/Fig1_Nine_Dimensions.png
+
+Figure 2 — AetherAudit Lifecycle
+
+docs/figures/Fig2_Audit_Lifecycle.png
+
+Figure 3 — The Five Functions of AetherAudit (Fn1–Fn5)
+
+docs/figures/Fig3_Audit_Functions.png
+
+Figure 4 — AetherAudit and Its Boundaries
+
+docs/figures/Fig4_Boundaries.png
+
+Figure 5 — The Falsification Procedure (A-F1 to A-F4)
+
+docs/figures/Fig5_Falsification_Procedure.png
+
+Figure 6 — Phase Status (Paused at Phase 4)
+
+docs/figures/Fig6_Phase_Status.png
+
+Figure 7 — The Five Phase 4 Outcomes (A / R / E / F / D)
+
+docs/figures/Fig7_Decision_Outcomes.png
+
+Figure 8 — Coverage Matrix: Five Functions × Existing Dimensions
+
+docs/figures/Fig8_Overlap_Matrix.png
+
+Figure 9 — Evaluation Design: Scenarios × Metrics × Failure Conditions
+
+docs/figures/Fig9_Evaluation_Design.png
 
 Figures 1–9 are described in the paper.
 
