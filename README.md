@@ -292,44 +292,46 @@ Figures 1–9 are described in the paper.
 
 ---
 
-Research Status
+## Research Status
 
-Item Status
-Project AetherAudit — candidate tenth project of the Aether family; does not replace AetherIdentity or AetherPolicy
-Phase Paused at Phase 4 (Independence Decision) — interim
-Decision (E) Undetermined: insufficient to accept, insufficient to reject
-Propositions P1 (near-trivial) and P2 stated as proof sketches; not machine-checked
-Failure conditions A-F1, A-F2, A-F3 not falsified by argument; A-F4 untested
-Implementation None
-Experiments None executed; Section 9 of the paper is a proposal
-Independent review Not started (Phase 2) — protocol ready (REVIEW/INDEPENDENT_REVIEW_PROTOCOL.md)
-Claims not made Independence of the dimension; completeness of the five functions; sufficiency of the boundaries; any observed benefit; any causal effect
+| Item | Status |
+|---|---|
+| Project | AetherAudit — candidate tenth project of the Aether family; does not replace AetherIdentity or AetherPolicy |
+| Phase | Paused at Phase 4 (Independence Decision) — interim |
+| Decision | (E) Undetermined: insufficient to accept, insufficient to reject |
+| Propositions | P1 (near-trivial) and P2 stated as proof sketches; not machine-checked |
+| Failure conditions | A-F1, A-F2, A-F3 not falsified by argument; A-F4 untested |
+| Implementation | None |
+| Experiments | None executed; Section 9 of the paper is a proposal |
+| Independent review | Not started (Phase 2) — protocol ready (`REVIEW/INDEPENDENT_REVIEW_PROTOCOL.md`) |
+| Claims not made | Independence of the dimension; completeness of the five functions; sufficiency of the boundaries; any observed benefit; any causal effect |
 
 ---
 
-Author
+## Author
 
-Samir Baladi
+**Samir Baladi**
 Interdisciplinary AI Researcher, Ronin Institute / Rite of Renaissance
 
- 
-Email gitdeeper@gmail.com
-ORCID 0009-0003-8903-0029
-GitHub gitdeeper15/aetheraudit
-GitLab gitlab.com/gitdeeper15/aetheraudit
-Codeberg codeberg.org/gitdeeper15/aetheraudit
-Bitbucket bitbucket.org/gitdeeper15/aetheraudit
-Website aetheraudit.netlify.app
-Zenodo 10.5281/zenodo.24274628
+| | |
+|---|---|
+| Email | gitdeeper@gmail.com |
+| ORCID | [0009-0003-8903-0029](https://orcid.org/0009-0003-8903-0029) |
+| GitHub | [gitdeeper15/aetheraudit](https://github.com/gitdeeper15/aetheraudit) |
+| GitLab | [gitlab.com/gitdeeper15/aetheraudit](https://gitlab.com/gitdeeper15/aetheraudit) |
+| Codeberg | [codeberg.org/gitdeeper15/aetheraudit](https://codeberg.org/gitdeeper15/aetheraudit) |
+| Bitbucket | [bitbucket.org/gitdeeper15/aetheraudit](https://bitbucket.org/gitdeeper15/aetheraudit) |
+| Website | [aetheraudit.netlify.app](https://aetheraudit.netlify.app) |
+| Zenodo | [10.5281/zenodo.24274628](https://doi.org/10.5281/zenodo.24274628) |
 
 ---
 
-License
+## License
 
 CC-BY-4.0 (this document). MIT (code, future — none in this release).
 
 ---
 
-AetherAudit v1.0.0 — Architectural Investigation.
+**AetherAudit v1.0.0 — Architectural Investigation.**
 © 2026 Samir Baladi — Ronin Institute / Rite of Renaissance.
-DOI: 10.5281/zenodo.24274628
+DOI: [10.5281/zenodo.24274628](https://doi.org/10.5281/zenodo.24274628)
